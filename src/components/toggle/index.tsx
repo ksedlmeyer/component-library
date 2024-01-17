@@ -1,0 +1,105 @@
+import classNames from 'classnames';
+import { Switch } from '@headlessui/react';
+import { ToolTipLabel } from '../toolTipLabel';
+import { DevProps } from '../dev';
+import { FC } from 'react';
+
+export interface ToggleProps extends DevProps {
+  labelPalette?: DevProps['textPalette'];
+  labelPaletteStop?: DevProps['textPaletteStop'];
+  label?: string;
+  labelPosition?: 't' | 'l';
+  tip?: string;
+  required?: boolean;
+  isToggled?: boolean;
+  setIsToggled?: (value: boolean) => void;
+  togglePalette?: DevProps['bgPalette'];
+  togglePaletteStop?: DevProps['bgPaletteStop'];
+  tipLocation?: 'l' | 'r' | 't';
+}
+
+export const Toggle: FC<ToggleProps> = ({
+  label,
+  labelPalette = 'neutral',
+  labelPaletteStop = 700,
+  labelPosition = 'l',
+  tip,
+  required = false,
+  isToggled = false,
+  setIsToggled,
+  togglePalette = 'secondary',
+  togglePaletteStop = 400,
+  justifyContent = 'start',
+  tipLocation = 'r'
+}) => {
+  return (
+    <Switch.Group
+      as='div'
+      className={
+        labelPosition === 't'
+          ? `flex py-4 w-full justify-${justifyContent} flex-col`
+          : `flex py-4 items-center w-full justify-${justifyContent} flex-row`
+      }>
+      <ToolTipLabel
+        label={label}
+        tip={tip}
+        required={required}
+        labelPalette={labelPalette}
+        labelPaletteStop={labelPaletteStop}
+        tipLocation={tipLocation}
+      />
+      <Switch
+        checked={isToggled}
+        onChange={setIsToggled}
+        className={classNames(
+          isToggled
+            ? `bg-${togglePalette}-${togglePaletteStop}`
+            : 'bg-gray-200',
+          `relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${togglePalette}-500 mr-3`
+        )}>
+        <span
+          className={classNames(
+            isToggled ? 'translate-x-5' : 'translate-x-0',
+            'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
+          )}>
+          <span
+            className={classNames(
+              isToggled
+                ? 'opacity-0 ease-out duration-100'
+                : 'opacity-100 ease-in duration-200',
+              'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
+            )}
+            aria-hidden='true'>
+            <svg
+              className='h-3 w-3 text-gray-400'
+              fill='none'
+              viewBox='0 0 12 12'>
+              <path
+                d='M4 8l2-2m0 0l2-2M6 6L4 4m2 2l2 2'
+                stroke='currentColor'
+                strokeWidth={2}
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              />
+            </svg>
+          </span>
+          <span
+            className={classNames(
+              isToggled
+                ? 'opacity-100 ease-in duration-200'
+                : 'opacity-0 ease-out duration-100',
+              'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
+            )}
+            aria-hidden='true'>
+            <svg
+              className={`h-3 w-3 text-${togglePalette}-${togglePaletteStop}`}
+              fill='currentColor'
+              viewBox='0 0 12 12'>
+              <path d='M3.707 5.293a1 1 0 00-1.414 1.414l1.414-1.414zM5 8l-.707.707a1 1 0 001.414 0L5 8zm4.707-3.293a1 1 0 00-1.414-1.414l1.414 1.414zm-7.414 2l2 2 1.414-1.414-2-2-1.414 1.414zm3.414 2l4-4-1.414-1.414-4 4 1.414 1.414z' />
+            </svg>
+          </span>
+        </span>
+      </Switch>
+    </Switch.Group>
+  );
+};

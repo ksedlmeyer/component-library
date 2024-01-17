@@ -1,0 +1,122 @@
+import { Corners, LR } from '../../utils/types';
+import { BadgeProps } from '../badge';
+import { ButtonProps } from '../button/button.types';
+import { DevProps } from '../dev/dev.types';
+import { IconProps } from '../icon/icon.types';
+import { LabelProps } from '../label/label.types';
+import { ThumbnailProps } from '../thumbnail';
+
+export interface ItemCardProps extends DevProps {
+  thumbnailProps?: ThumbnailProps;
+  overlineText?: string;
+  overlineLeadingIcon?: IconProps['svg'];
+  overlineTrailingIcon?: IconProps['svg'];
+  titleText?: string;
+  titleLeadingIcon?: IconProps['svg'];
+  titleTrailingIcon?: IconProps['svg'];
+  thumbnailDivPosition?: DevProps['position'];
+  thumbnailDivHeight?: DevProps['height'];
+  thumbnailDivWidth?: DevProps['width'];
+  overlineFontSize?: DevProps['fontSize'];
+  overlineFontWeight?: DevProps['fontWeight'];
+  overlineTextPalette?: DevProps['textPalette'];
+  overlineTextPaletteStop?: DevProps['textPaletteStop'];
+  overlineTextAlign?: DevProps['textAlign'];
+  overlineLineClamp?: DevProps['lineClamp'];
+  overlineLetterSpacing?: DevProps['letterSpacing'];
+  overlineTextShadowDirection?: DevProps['textShadowDirection'];
+  overlineTextShadowPalette?: DevProps['textShadowPalette'];
+  overlineTextShadowPaletteStop?: DevProps['textShadowPaletteStop'];
+  overlineTextShadowBlur?: DevProps['textShadowBlur'];
+  overlineTextShadowThickness?: DevProps['textShadowThickness'];
+  overlineTextShadowOpacity?: DevProps['textShadowOpacity'];
+  overlineWordBreak?: DevProps['wordBreak'];
+  titleFontSize?: DevProps['fontSize'];
+  titleFontWeight?: DevProps['fontWeight'];
+  titleTextPalette?: DevProps['textPalette'];
+  titleTextPaletteStop?: DevProps['textPaletteStop'];
+  titleTextAlign?: DevProps['textAlign'];
+  titleLetterSpacing?: DevProps['letterSpacing'];
+  titleLineHeight?: DevProps['lineHeight'];
+  titleLineClamp?: DevProps['lineClamp'];
+  titleTextShadowDirection?: DevProps['textShadowDirection'];
+  titleTextShadowPalette?: DevProps['textShadowPalette'];
+  titleTextShadowPaletteStop?: DevProps['textShadowPaletteStop'];
+  titleTextShadowBlur?: DevProps['textShadowBlur'];
+  titleTextShadowThickness?: DevProps['textShadowThickness'];
+  titleTextShadowOpacity?: DevProps['textShadowOpacity'];
+  titleWordBreak?: DevProps['wordBreak'];
+  descriptionText?: string;
+  descriptionTextAlign?: DevProps['textAlign'];
+  descriptionLeadingIcon?: IconProps['svg'];
+  descriptionTrailingIcon?: IconProps['svg'];
+  descriptionFontSize?: DevProps['fontSize'];
+  descriptionFontWeight?: DevProps['fontWeight'];
+  descriptionTextPalette?: DevProps['textPalette'];
+  descriptionTextPaletteStop?: DevProps['textPaletteStop'];
+  descriptionLetterSpacing?: DevProps['letterSpacing'];
+  descriptionLineHeight?: DevProps['lineHeight'];
+  descriptionTextShadowDirection?: DevProps['textShadowDirection'];
+  descriptionTextShadowPalette?: DevProps['textShadowPalette'];
+  descriptionTextShadowPaletteStop?: DevProps['textShadowPaletteStop'];
+  descriptionTextShadowBlur?: DevProps['textShadowBlur'];
+  descriptionTextShadowThickness?: DevProps['textShadowThickness'];
+  descriptionTextShadowOpacity?: DevProps['textShadowOpacity'];
+  descriptionLineClamp?: DevProps['lineClamp'];
+  descriptionWordBreak?: DevProps['wordBreak'];
+  buttonIcons?: {
+    icon: string;
+    selected: boolean;
+    onClick?: ButtonProps['onClick'];
+    bgPalette?: ButtonProps['bgPalette'];
+    bgPaletteStop?: ButtonProps['bgPaletteStop'];
+    props?: ButtonProps;
+  }[];
+  // ItemCard GroupBadges Section
+  badgeSize?: 'basic' | 'large';
+  badgeCorner?: Corners;
+  badges?: {
+    label: string; //Badge
+    bgPalette: BadgeProps['bgPalette']; //Badge
+    props?: BadgeProps; //Badge
+  }[];
+  // ItemCard GroupContextValues Section
+  contextValuesTextPalette?: LabelProps['textPalette'];
+  contextValuesTextPaletteStop?: LabelProps['textPaletteStop'];
+  contextValues?: {
+    label: LabelProps['label'];
+    leadingIcon: LabelProps['leadingIcon'];
+    progress?: LabelProps['progress'];
+    visualProgressRadial?: LabelProps['visualProgressRadial'];
+    contextValueProps?: LabelProps;
+  }[];
+  bgCardPalette?: DevProps['bgPalette'];
+  bgCardPaletteStop?: DevProps['bgPaletteStop'];
+  isDisabled?: boolean;
+  corner?: Corners;
+  hasAttachment?: boolean;
+  attachmentIconPalette?: IconProps['fillPalette'];
+  attachmentIconPaletteStop?: IconProps['fillPaletteStop'];
+  attachmentIconBgPalette?: DevProps['bgPalette'];
+  attachmentIconBgPaletteStop?: DevProps['bgPaletteStop'];
+  attachmentIconLocation?: LR;
+  attachmentIconPaletteOverride?: IconProps['fillPalette'];
+  attachmentIconPaletteStopOverride?: IconProps['fillPaletteStop'];
+  attachmentIconBgPaletteOverride?: DevProps['bgPalette'];
+  attachmentIconBgPaletteStopOverride?: DevProps['bgPaletteStop'];
+  attachmentIconLocationOverride?: LR;
+  hideOverlineText?: boolean;
+  hideDescriptionText?: boolean;
+  cardBorderWidth?: DevProps['borderWidth'];
+  cardBorderPalette?: DevProps['borderPalette'];
+  cardBorderPaletteStop?: DevProps['borderPaletteStop'];
+  titleContainerClasses?: string;
+  iconSize?: LabelProps['size'];
+  listAggregate?: boolean;
+  listAggregateState?: string;
+  listAggregateLocation?: string;
+  listAggregateIconPalette?: DevProps['bgPalette'];
+  listAggregateIconPaletteStop?: DevProps['bgPaletteStop'];
+  listAggregateIconHeight?: IconProps['height'];
+  listAggregateIconWidth?: IconProps['width'];
+}

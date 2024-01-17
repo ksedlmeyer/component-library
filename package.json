@@ -1,0 +1,103 @@
+{
+  "name": "@nexgen/ascnd-library",
+  "publishConfig": {
+    "@nexgen:registry": "https://code.4thdown.co/api/v4/projects/613/packages/npm/"
+  },
+  "version": "0.1.49",
+  "description": "4th Down react component library",
+  "scripts": {
+    "start": "start-storybook -p 6006 --no-open",
+    "build": "rollup -c",
+    "build-storybook": "build-storybook",
+    "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "pre-commit": "lint-staged",
+    "prepare": "install-peers"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "author": "callanbr",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@heroicons/react": "^2.0.11",
+    "@mdx-js/react": "^2.1.2",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "8.3.3",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/addons": "^6.5.15",
+    "@storybook/builder-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.5.15",
+    "@storybook/theming": "^6.5.15",
+    "@testing-library/react": "^13.3.0",
+    "@types/classnames": "^2.3.1",
+    "@types/marked": "^4.0.8",
+    "@types/react": "^18.0.15",
+    "@types/react-table": "^7.7.12",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.21.0",
+    "babel-loader": "^8.2.5",
+    "classnames": "^2.3.1",
+    "clsx": "^1.1.0",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "framer-motion": "^7.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
+    "install-peers-cli": "^2.2.0",
+    "lint-staged": "^12.4.1",
+    "marked": "^4.2.12",
+    "prettier": "^2.6.2",
+    "react-export-table-to-excel": "^1.0.6",
+    "react-table": "^7.8.0",
+    "rollup": "^2.60.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^4.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.54.0",
+    "sass-loader": "^13.0.2",
+    "storybook-dark-mode": "^2.0.5",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0"
+  },
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "files": [
+    "build"
+  ],
+  "types": "build/index.d.ts",
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@tanstack/react-table": "^8.10.1",
+    "html-react-parser": "^3.0.8",
+    "webpack": "^5.74.0"
+  }
+}
